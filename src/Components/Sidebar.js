@@ -8,7 +8,7 @@ import { FaCoins } from "react-icons/fa";
 import logo from "../Assets/logo-light.png"
 
 const navLinks = [
-  { name: "Dashboard", icon: RiDashboardLine, path: "/app/dashboard" },
+  { name: "Dashboard", icon: RiDashboardLine, path: "/app/dashboard/home" },
   { name: "Fuel Inventory", icon: BsFuelPump, path: "/app/dashboard/inventory" },
   {
     name: "Employee Management",
@@ -26,23 +26,24 @@ const navLinks = [
 const Sidebar = () => {
   const location = useLocation();
 
-  const isActive = (path) => location.pathname.startsWith(path);
+const isActive = (path) =>
+  location.pathname === path || location.pathname.startsWith(path + "/");
 
   return (
     <aside className="h-screen text-white">
       <nav className="h-screen flex flex-col bg-primary shadow-sm pt-4 pb-2">
         <div className="p-4 pb-2">
-          <img src={logo} width="180px"/>
+          <img src={logo} width="180px" />
         </div>
 
         <ul className="flex-1 px-3 text-lg gap-6 mt-8 tracking-wide">
           {navLinks.map(({ name, icon: Icon, path }) => (
             <li
               key={name}
-              className={`p-3 rounded-md py-6 ${
+              className={`p-3 rounded-md py-3 cursor-pointer ${
                 isActive(path)
                   ? "bg-[#022c5b] text-white"
-                  : "hover:bg-[#03396c]"
+                  : "hover:bg-[#03396c] text-soft-gray"
               }`}
             >
               <Link

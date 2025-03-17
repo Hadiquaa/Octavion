@@ -21,7 +21,7 @@ const Dashboard = () => {
         </div>
         <div className="flex-1 flex flex-col overflow-y-auto px-6 py-2">
           <Routes>
-            <Route index element={<Home />} />
+            <Route path='home' element={<Home />} />
             <Route path="inventory" element={<FuelInventory />} />
             <Route
               path="employee-management"
