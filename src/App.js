@@ -1,16 +1,22 @@
-import './App.css';
-import { Routes, Route } from 'react-router-dom';
-import Login1 from './Pages/Login1';
-import Dashboard from './Pages/Dashboard';
+import {
+  
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import MainApp from "./Pages/MainApp";
 
 function App() {
   return (
-    <div className="App h-screen w-screen">
+    
       <Routes>
-        <Route path="/" element={<Login1/>}/>
-        <Route path="/dashboard/*" element={<Dashboard/>}/>
+        {/* Redirect to static landing page */}
+        <Route path="/" element={<Navigate replace to="/landing-page/" />} />
+
+        {/* React App starts from /app */}
+        <Route path="/app/*" element={<MainApp />} />
       </Routes>
-    </div>
+    
   );
 }
 

@@ -12,14 +12,16 @@ import Topbar from "../Components/Topbar";
 const Dashboard = () => {
   return (
     <div className="w-full flex h-screen">
-      <div className="w-[20%]">
+      <div className="w-[17%] h-screen sticky top-0 ">
         <Sidebar />
       </div>
-      <div className="flex-1 flex flex-col h-screen overflow-hidden">
-        <Topbar />
-        <div className="flex-1 flex flex-col px-6 py-2">
+      <div className="flex-1 flex flex-col h-screen ">
+        <div className="sticky top-0 w-full z-10 bg-white shadow-md">
+          <Topbar />
+        </div>
+        <div className="flex-1 flex flex-col overflow-y-auto px-6 py-2">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route index element={<Home />} />
             <Route path="inventory" element={<FuelInventory />} />
             <Route
               path="employee-management"

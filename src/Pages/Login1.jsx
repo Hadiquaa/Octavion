@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import placeholder from "../Assets/placeholder.png";
+import logo from "../Assets/output-onlinepngtools.png"
 
 const Login = () => {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -11,7 +12,7 @@ const Login = () => {
     e.preventDefault();
     setIsAnimating(true);
     setTimeout(() => {
-      navigate("/dashboard");
+      navigate("/app/dashboard");
     }, 1500);
   };
 
@@ -38,7 +39,7 @@ const Login = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="font-bold text-2xl typing-animation">
-            OctaVion{" "}
+            OCTAVION{" "}
             <span className="font-medium">
               : The Octagon of fuel management
             </span>
@@ -62,7 +63,7 @@ const Login = () => {
         }}
       >
         <div className="absolute top-8 right-4 text-4xl font-bold text-accent-blue">
-          OctaVion
+          <img src={logo} width="200px" height="100px"/>
         </div>
         <div className="text-left">
           <h1 className="font-bold text-4xl text-accent-blue">Log in</h1>
