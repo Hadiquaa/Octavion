@@ -22,7 +22,7 @@ const Login = () => {
       <motion.div
         className="bg-primary flex justify-center items-center flex-col gap-8"
         initial={{ width: "60%" }}
-        animate={{ width: isAnimating ? "20%" : "60%" }}
+        animate={{ width: isAnimating ? "17%" : "60%" }}
         transition={{ duration: 1 }}
       >
         <motion.img
@@ -54,7 +54,7 @@ const Login = () => {
       <motion.div
         className="relative flex justify-center items-center bg-white"
         initial={{ width: "40%" }}
-        animate={{ width: isAnimating ? "80%" : "40%" }}
+        animate={{ width: isAnimating ? "83%" : "40%" }}
         transition={{ duration: 1 }}
         style={{
           clipPath: isAnimating
